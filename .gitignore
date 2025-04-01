@@ -1,3 +1,10 @@
+bin
+include
+lib
+lib64
+
+*.cfg
+
 *.mat
 *.asv
 *.fig
