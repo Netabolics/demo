@@ -1,0 +1,24 @@
+# file: datasets/TreatedSample.dat
+# data source: Drug-gene interaction database (DGIdb) version 5.0.8 [https://dgidb.org/]
+
+# drug 1/2: ASPIRIN (rxcui:1191) [5 gene-associated reactions affected]
+
+R_ACT_BTD 		 = DREG 0.0000000608488278  # hgnc:1122
+R_ACT_CPT1B 		 = DREG 0.0000000304244139  # hgnc:2329
+R_ACT_CPT2 		 = DREG 0.0000000224876111  # hgnc:2330
+R_ACT_PTGS1 		 = DREG 0.0000000646518806  # hgnc:9604
+R_ACT_PTGS2 		 = DREG 0.0000000376156389  # hgnc:9605
+
+# drug 2/2: GENISTEIN (rxcui:25696) [8 gene-associated reactions affected]
+
+R_ACT_BDH1 		 = UREG 0.0000005029470425  # hgnc:1027
+R_ACT_BDKRB1 		 = UREG 0.0000002794150222  # hgnc:1029
+R_ACT_BDKRB2 		 = UREG 0.0000000523903167  # hgnc:1030
+R_ACT_FOXL2 		 = UREG 0.0000001047806333  # hgnc:1092
+R_ACT_BRCA2 		 = UREG 0.0000000739628000  # hgnc:1101
+R_ACT_CFTR 		 = UREG 0.0000002286122917  # hgnc:1884
+R_ACT_ESR2 		 = UREG 0.0000000598746472  # hgnc:3468
+R_ACT_ATP2B1 		 = UREG 0.0000000785854750  # hgnc:814
+
+# last-modified: 21-Mar-2025 15:50:02
+# eof
