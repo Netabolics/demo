@@ -21,7 +21,7 @@ import Netabolics.*
 %% Preparation
 
 % Load human cell template model
-Filename = "datasets/Cell.mat";
+Filename = "../datasets/Cell.mat";
 if exist(Filename,"file")
     Cell = Biology.Model(Filename);
 else
