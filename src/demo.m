@@ -53,7 +53,7 @@ if exist(Filename,"file")
     Treated = Biology.Phenotype(Cell,Filename);
 else
     Therapy = Biology.Template.Drug(["aspirin","genistein"]);
-    Treated = Therapy.phenotype(Cell,"datasets/TreatedSample.dat");
+    Treated = Therapy.phenotype(Cell,"../datasets/TreatedSample.dat");
     Treated.saveMat(Filename);
 end
 
