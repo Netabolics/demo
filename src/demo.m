@@ -30,7 +30,7 @@ else
 end
 
 % Define healthy phenotype
-Filename = "datasets/Healthy.mat";
+Filename = "../datasets/Healthy.mat";
 if exist(Filename,"file")
     Healthy = Biology.Phenotype(Cell,Filename);
 else
@@ -39,7 +39,7 @@ else
 end
 
 % Define diseased phenotype    
-Filename = "datasets/Diseased.mat";
+Filename = "../datasets/Diseased.mat";
 if exist(Filename,"file")
     Diseased = Biology.Phenotype(Cell,Filename);
 else
@@ -48,7 +48,7 @@ else
 end
 
 % Define therapy and treated phenotype
-Filename = "datasets/Treated.mat";
+Filename = "../datasets/Treated.mat";
 if exist(Filename,"file")
     Treated = Biology.Phenotype(Cell,Filename);
 else
@@ -70,7 +70,7 @@ Scenario.solve();
 
 data = array2table(Scenario.Solution.species(:,[1,end]), ...
     VariableNames=["Healthy","Diseased"]);
-writetable(data,'./results/species.csv','WriteVariableNames',true);
+writetable(data,'../results/species.csv','WriteVariableNames',true);
 
 
 %% Plot time-courses
@@ -117,5 +117,5 @@ for i = 1:numel(searchInfo)
     Table = table(searchInfo(i).Sequences',searchInfo(i).Rewards', ...
         VariableNames=["Drug","Reward"]);
     Table.Drug = cell2mat(Table.Drug);
-    writetable(Table,sprintf('./results/search/sequence_%d.txt',i),'WriteRowNames',true);
+    writetable(Table,sprintf('../results/search/sequence_%d.txt',i),'WriteRowNames',true);
 end
