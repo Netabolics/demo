@@ -240,9 +240,9 @@ Drugs = Biology.Template.Drug( ...
 
 Note that the above drugs model account for pleiotropy, as each of them typically modulates more than one target. If no drug is explicitly provided, the toolbox employs a default strategy that allows the agent to use "virtual target-specific drugs" to modulate each target individually (either as activator or inhibitor). In the case of the present model, the latter translates to about 20,000 virtual drugs.
 
-**IMPORTANT**: The number and type of targets available to the agent affects the performance of the DRL algorithms, as the action (combinatorial) space changes accordingly. By default, the toolbox uses double deep Q network (DQN) based learning with discrete action space (i.e., drugs) with preconditioning (*) and continuous observation space (i.e., simulation outcomes).
+**IMPORTANT**: The number and type of targets available to the agent affects the performance of the DRL algorithms, as the (combinatorial) action space changes accordingly. By default, the toolbox uses double deep Q network (DQN) based learning with discrete action space (i.e., drugs) with preconditioning (*) and continuous observation space (i.e., simulation outcomes).
 
-(\*) *Preconditioning is based on preliminary simulations that provide a list of all targets ordered by the probability of their involvement in the phenotypic transition.*
+(\*) *Preconditioning is based on preliminary simulations that provide a list of all targets ordered by the probability of their involvement in the phenotypic transition. Such list is typically censored to include only a certain number of targets.*
 
 Our overall goal is to ask the agent to find whatever combinations of drugs or targets that, when utilized on the digital cell, can favor a state transition from the diseased phenotype towards the healthy phenotype (e.g., minimizing a distance metric between the two phenotypes). 
 
@@ -261,7 +261,7 @@ The result of the above search are summarized in the following figure:
 
 The search took few minutes across about 400 episodes. The sequence yielding the largest reward (approx. 10<sup>-5</sup>) was `[1,7,6,4,4,8,7,4,7,7]`, which corresponds to the combination of (in order of occurrences): disulfiram (4x), paclitaxel (3x), aspirin (1x), azacitidine (1x), and cytaribine (1x). Interestingly, the suggested drug disulfiram (currently being repurposed for cancer treatment) is fully consistent with the results of the simulation that indicated upregulation of fatty acid oxidation (see above).
 
-Note however that the rewards associated with the above combinations is substantially (5-6 orders of magnitude) lower than the theoretical maximum reward of 1.0 for a complete reversal of diseased phenotype. Unconstrained search and/or agent training produce significantly better rewards. To run such a DRL-guided simulation (with default options) we do:
+Note however that the rewards associated with the above combinations is substantially (5-6 orders of magnitude) lower than the theoretical maximum reward of 1.0 for a complete reversal of diseased phenotype. Unconstrained search and/or agent training produce significantly better rewards. To run such a DRL-guided simulation (with default options, e.g., including preconditioning censored at 500 targets) we do:
 
 ```matlab
 Task = AI.Agent(Healthy,Diseased); % no drugs (i.e., unconstrained)
@@ -279,7 +279,7 @@ Although computationally very expensive (hours instead of minutes relative to he
 
 The Netabolics toolbox provides a streamlined interface for executing genome-scale biosimulations. The underlying data, which inform the models and phenotypes, are continuously updated as new knowledge emerges, and the methods undergo ongoing refinement. As a result, users should expect periodic updates that enhance predictive accuracy and expand functionality, though minor variations in results may occur.
 
-This demo has introduced the fundamental features of the toolbox, including running basic tasks, handling output files, and managing disk space efficiently. For more complex analyses, users can extend these workflows by incorporating additional model parameters and data sources.
+This demo has introduced the fundamental features of the toolbox, including running basic tasks like state transition simulation and simple target deconvolution. For more complex analyses, users can extend these workflows by incorporating additional model parameters and data sources.
 
 The toolbox evolves continuously to integrate the latest advancements in biosimulation and computational modeling. To stay informed about updates, new features, and best practices, follow us and subscribe to our repositories/newsletters.
 
