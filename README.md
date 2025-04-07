@@ -32,7 +32,7 @@ Task.search();
 Task.Statistics.Combination(1)
 ```
 
-A structure as simple as the above can be the starting point for more advanced analyses. For example, below we will also describe how to perform a basic target deconvolution task.
+A structure as simple as the above can be the starting point for more advanced analyses. 
 
 
 ## 1. Initialize the toolbox
@@ -281,10 +281,9 @@ The Netabolics toolbox provides a streamlined interface for executing genome-sca
 
 This demo has introduced the fundamental features of the toolbox, including running basic tasks, handling output files, and managing disk space efficiently. For more complex analyses, users can extend these workflows by incorporating additional model parameters and data sources.
 
-
 The toolbox evolves continuously to integrate the latest advancements in biosimulation and computational modeling. To stay informed about updates, new features, and best practices, follow us and subscribe to our repositories/newsletters.
 
-The website provides documentation, example use cases, and news about ongoing developments. A Python wrapper will soon be released, allowing seamless integration of the toolbox into notebooks or API-based workflows, enabling users to leverage its computational power with minimal setup. We welcome user feedback and collaboration to further enhance the toolbox’s capabilities.
+Our website provides documentation, example use cases, and news about ongoing developments. A Python wrapper will soon be released, allowing seamless integration of the toolbox into notebooks or API-based workflows, enabling users to leverage its computational power with minimal setup. We welcome user feedback and collaboration to further enhance the toolbox’s capabilities.
 
 
 ## Copyright Notice
