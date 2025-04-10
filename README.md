@@ -78,7 +78,7 @@ Here species nodes are colored orange and reaction nodes/edges are colored blue.
 ## 3. Define phenotypes 
 
 ### 3.1 Using experimental data
-The above template model comes with a default parametrization (e.g., species concentrations, reaction rates, etc). In order to be any useful, we need to associate a phenotype (i.e., a state) to the model. This step could be seen as a "differentiation" into a cell type and/or a given condition. 
+The above template model comes with a default parametrization (e.g., species concentrations, reaction rates, etc). In order to be of any use, we need to associate a phenotype (i.e., a state) to the model. This step could be seen as a "differentiation" into a cell type and/or a given condition. 
 
 To start with, we define a healthy generic phenotype for the model `Cell`: 
 
@@ -242,7 +242,7 @@ Note that the above drugs model account for pleiotropy, as each of them typicall
 
 **IMPORTANT**: The number and type of targets available to the agent affects the performance of the DRL algorithms, as the (combinatorial) action space changes accordingly. By default, the toolbox uses double deep Q network (DQN) based learning with discrete action space (i.e., drugs) with preconditioning (*) and continuous observation space (i.e., simulation outcomes).
 
-(\*) *Preconditioning is based on preliminary simulations that provide a list of all targets ordered by the probability of their involvement in the phenotypic transition. Such list is typically censored to include only a certain number of targets.*
+(\*) *Preconditioning is based on preliminary simulations that provide a list of all targets ordered by the probability of their involvement in the phenotypic transition. Such a list is typically censored to include only a certain number of targets.*
 
 Our overall goal is to ask the agent to find whatever combinations of drugs or targets that, when utilized on the digital cell, can favor a state transition from the diseased phenotype towards the healthy phenotype (e.g., minimizing a distance metric between the two phenotypes). 
 
