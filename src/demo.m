@@ -116,5 +116,5 @@ searchInfo = Task.search();
 for i = 1:numel(searchInfo.Level)
     Table = table(searchInfo.Level(i).Sequences,searchInfo.Level(i).Rewards,VariableNames=["Drug","Reward"]);
     Table = splitvars(Table);
-    writetable(Table,sprintf('./results/sequence_%d.txt',i),WriteRowNames=true);
+    writetable(Table,sprintf('./results/sequence_%02d.csv',i),WriteRowNames=true);
 end
