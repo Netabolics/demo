@@ -70,7 +70,7 @@ Scenario.solve();
 
 data = array2table(Scenario.Solution.species(:,[1,end]), ...
     VariableNames=["Healthy","Diseased"]);
-writetable(data,'../results/species.csv','WriteVariableNames',true);
+writetable(data,"../results/species.csv",WriteVariableNames=true);
 
 
 %% Plot time-courses
@@ -113,9 +113,8 @@ Drugs = Biology.Template.Drug( ...
 Task = AI.Agent(Diseased,Healthy,Drugs);
 searchInfo = Task.search();
 
-for i = 1:numel(searchInfo)
-    Table = table(searchInfo(i).Sequences',searchInfo(i).Rewards', ...
-        VariableNames=["Drug","Reward"]);
-    Table.Drug = cell2mat(Table.Drug);
-    writetable(Table,sprintf('../results/search/sequence_%d.txt',i),'WriteRowNames',true);
+for i = 1:numel(searchInfo.Level)
+    Table = table(searchInfo.Level(i).Sequences,searchInfo.Level(i).Rewards,VariableNames=["Drug","Reward"]);
+    Table = splitvars(Table);
+    writetable(Table,sprintf('./results/sequence_%d.txt',i),WriteRowNames=true);
 end

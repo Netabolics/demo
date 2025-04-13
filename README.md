@@ -156,7 +156,7 @@ The above will result in a 50% loss-of-function mutation (LOFM) for PTGS1-encode
 ## 4. Simulate cellular state transitions
 We can simulate the temporal evolution across phenotypes using our proprietary methods for creating and solving a dynamical system of ordinary differential equation (ODE) starting from the static model reconstruction and data. Of course, in real conditions the disease phenotype does not occur at-once as we do here (a more realistic picture would be possible if we had the temporal evolution of the diseased phenotype, which would require data to be acquired across the disease evolution time-span, something that however is seldom available in the practice).
 
-It is possible to simulate as many phenotypes as we need in a ordered sequential manner. Here we simulate our three phenotypes, which translates into two transitions (healthy&rightarrow;diseased and diseased&rightarrow;treated):
+It is possible to simulate as many phenotypes as we need in an ordered sequential manner. Here we simulate our three phenotypes, which translates into two transitions (healthy&rightarrow;diseased and diseased&rightarrow;treated):
 
 ```matlab
 % Prepare the ODE system (with default settings)
@@ -259,7 +259,7 @@ The result of the above search are summarized in the following figure:
 
 ![search](results/search.png)
 
-The search took few minutes across about 400 episodes. The sequence yielding the largest reward (approx. 10<sup>-5</sup>) was `[1,7,6,4,4,8,7,4,7,7]`, which corresponds to the combination of (in order of occurrences): disulfiram (4x), paclitaxel (3x), aspirin (1x), azacitidine (1x), and cytaribine (1x). Interestingly, the suggested drug disulfiram (currently being repurposed for cancer treatment) is fully consistent with the results of the simulation that indicated upregulation of fatty acid oxidation (see above).
+The search took few minutes across about 350 episodes. The sequence yielding the largest reward (approx. 10<sup>-5</sup>) was `[4,7,6,8,4,4,1,7,2,7,7]`, which corresponds to the combination of (in order of occurrences): disulfiram (4x), paclitaxel (3x), aspirin (1x), genistein (1x), azacitidine (1x), cytaribine (1x). Interestingly, the suggested drug disulfiram (currently being repurposed for cancer treatment) is fully consistent with the results of the simulation that indicated upregulation of fatty acid oxidation (see above).
 
 Note however that the rewards associated with the above combinations is substantially (5-6 orders of magnitude) lower than the theoretical maximum reward of 1.0 for a complete reversal of diseased phenotype. Unconstrained search and/or agent training produce significantly better rewards. To run such a DRL-guided simulation (with default options, e.g., including preconditioning censored at 500 targets) we do:
 

@@ -1,0 +1,2 @@
+Drug_1,Drug_2,Drug_3,Drug_4,Drug_5,Drug_6,Drug_7,Drug_8,Drug_9,Drug_10,Drug_11,Reward
+4,7,6,8,4,4,1,7,2,7,7,9.477139e-06
