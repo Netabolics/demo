@@ -63,7 +63,7 @@ Cell = Biology.Template.Model("generic-10.22.89");
 
 The model version (`10.22.89`) indicates the approximate number of genes (10K), molecular species including proteins and metabolites (22K), and gene-associated chemical reactions (89K).
 
-The biological network models we use can be visualized as a directed hypergraphs using:
+The biological network models we use can be visualized as a directed hypergraph using:
 
 ```matlab
 Cell.plot(EdgeAlpha=0.2,Layout="force",UseGravity=true);
